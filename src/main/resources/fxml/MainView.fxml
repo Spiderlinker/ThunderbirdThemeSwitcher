@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" style="-fx-background-color: #B9C2D1;" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXButton fx:id="btnInstallTheme" buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#onInstallTheme" ripplerFill="#029e5d" style="-fx-background-color: rgba(1, 160, 94, 0.1);" text="Install">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXProgressBar fx:id="progressInstall" maxWidth="1.7976931348623157E308" />
+               </children>
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <JFXButton fx:id="btnUninstallTheme" buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#onUninstallTheme" ripplerFill="#ce584a" style="-fx-background-color: rgba(206, 88, 74, 0.1);" text="Uninstall">
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXProgressBar fx:id="progressUninstall" maxWidth="1.7976931348623157E308" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgPreview" fitHeight="218.0" fitWidth="360.0" onMouseClicked="#onImageClicked" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <image>
+                  <Image url="@../../../../Downloads/unzipped/chrome/screenshots/monterail.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="boxChooseTheme" maxWidth="1.7976931348623157E308" promptText="Choose Theme" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" prefWidth="100.0" text="Please restart Thunderbird to view the changes!" textAlignment="CENTER" wrapText="true">
+               <HBox.margin>
+                  <Insets left="40.0" right="20.0" />
+               </HBox.margin>
+            </Label>
+            <JFXButton fx:id="btnSwitchTheme" buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#onSwitchTheme" ripplerFill="#2f65a5" style="-fx-background-color: rgba(47, 101, 165, 0.1);" text="Switch Theme" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

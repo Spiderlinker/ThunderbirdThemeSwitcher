@@ -1,0 +1,25 @@
+.list-cell {
+    -fx-background-color: rgba(47, 101, 165, 0.2);
+}
+
+.list-cell:hover {
+    -fx-background-color: derive(#2f65a5, 50%);
+}
+
+.list-cell:selected {
+    -fx-background-color: #B9C2D1;
+    -fx-text-fill: black;
+}
+
+.jfx-progress-bar > .track, .jfx-progress-bar > .bar {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+.install-progress-bar > .bar {
+     -fx-background-color: #029e5d;
+ }
+
+.uninstall-progress-bar > .bar {
+     -fx-background-color: #ce584a;
+ }
