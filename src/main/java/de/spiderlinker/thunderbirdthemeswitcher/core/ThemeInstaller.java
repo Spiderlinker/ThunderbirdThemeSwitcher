@@ -26,10 +26,12 @@ public class ThemeInstaller {
 	}
 
 	private static void downloadTheme() throws IOException {
+		System.out.println("Downloading theme from: " + Config.URL_THEME_DOWNLOAD);
 		ThemeDownloader.downloadTheme(Config.URL_THEME_DOWNLOAD, Config.FILE_TEMP_DOWNLOAD);
 	}
 
 	private static void unzipDownloadedTheme() throws IOException {
+		System.out.println("Unzipping theme...");
 		Unzipper.unzip(Config.FILE_TEMP_DOWNLOAD, Config.DIR_TEMP_UNZIP);
 	}
 
@@ -40,6 +42,7 @@ public class ThemeInstaller {
 	}
 
 	private static void copyUnzippedThemeToProfiles() {
+		System.out.println("Installing theme...");
 		ThunderbirdUtils.getProfileFolders().forEach(ThemeInstaller::copyThemeToProfile);
 	}
 

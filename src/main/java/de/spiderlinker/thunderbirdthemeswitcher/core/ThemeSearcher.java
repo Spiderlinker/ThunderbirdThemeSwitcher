@@ -28,7 +28,6 @@ public class ThemeSearcher {
     return themesAndImages;
   }
 
-
   private static List<String> getThemesOfProfile(String profileFolder) {
     File themeFolder = new File(profileFolder, Config.RELATIVE_DIR_AVAILABLE_THEMES);
 

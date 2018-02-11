@@ -12,6 +12,7 @@ import java.util.List;
 public class ThemeSwitcher {
 
 	public static void switchThemeTo(String theme) {
+		System.out.println("Switching theme to " + theme);
 		ThunderbirdUtils.getProfileFolders().forEach(profileFolder -> {
 			try {
 				switchThemeInFileTo(new File(profileFolder, Config.FILE_THEME_CONFIGURATION).toPath(), theme);

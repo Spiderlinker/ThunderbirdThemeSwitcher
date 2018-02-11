@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 public class ThemeUninstaller {
 
 	public static void uninstallTheme() {
+		System.out.println("Uninstalling theme...");
 		deleteDirectory(new File(Config.DIR_TEMP));
 		ThunderbirdUtils.getProfileFolders()
 				.forEach(profileFolder -> deleteDirectory(new File(profileFolder, Config.THEME_FOLDER_NAME)));
