@@ -20,6 +20,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 import java.io.File;
@@ -27,6 +29,8 @@ import java.io.IOException;
 
 public class MainView {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(MainView.class);
+  
   @FXML
   private JFXButton btnInstallTheme;
   @FXML
@@ -58,6 +62,7 @@ public class MainView {
     setupComboBoxBinding();
     setupProgressBarBindings();
     setupImageBinding();
+    setupButtonBindings();
 
     updateThemeImages();
   }
@@ -91,6 +96,11 @@ public class MainView {
     boxChooseTheme.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> imgPreview.setImage(newValue == null ? null : getImageOfSelectedTheme()));
   }
 
+  private void setupButtonBindings() {
+    btnInstallTheme.disableProperty().bind(installing);
+    btnUninstallTheme.disableProperty().bind(uninstalling);
+  }
+
   private Image getImageOfSelectedTheme() {
     String selected = getSelectedImage();
     return selected == null ? null : new Image(new File(selected).toURI().toString());
@@ -101,9 +111,9 @@ public class MainView {
     new Thread(() -> {
       installing.setValue(true);
       try {
-        System.out.println("Installing theme...");
+        LOGGER.info("Installing theme...");
         ThemeInstaller.installTheme();
-        System.out.println("Theme installed!");
+        LOGGER.info("Theme installed!");
         updateThemeImages();
       } catch (IOException e1) {
         e1.printStackTrace();
@@ -150,13 +160,13 @@ public class MainView {
   }
 
   private void updateThemeImages() {
-    System.out.println("Updating available themes...");
+    LOGGER.info("Updating available themes...");
     Platform.runLater(() ->
     {
       themesAndTheirImages.clear();
       themesAndTheirImages.putAll(ThemeSearcher.getThemesAndImages());
       boxChooseTheme.requestFocus();
-      System.out.println("Found available themes: " + themesAndTheirImages);
+      LOGGER.info("Found available themes: {}");
     });
   }
 

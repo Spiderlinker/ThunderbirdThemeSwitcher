@@ -2,6 +2,8 @@ package de.spiderlinker.thunderbirdthemeswitcher.core;
 
 import de.spiderlinker.thunderbirdthemeswitcher.Config;
 import de.spiderlinker.thunderbirdthemeswitcher.utils.ThunderbirdUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,9 +12,11 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class ThemeSwitcher {
-
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(ThemeSwitcher.class);
+	
 	public static void switchThemeTo(String theme) {
-		System.out.println("Switching theme to " + theme);
+		LOGGER.info("Switching theme to " + theme);
 		ThunderbirdUtils.getProfileFolders().forEach(profileFolder -> {
 			try {
 				switchThemeInFileTo(new File(profileFolder, Config.FILE_THEME_CONFIGURATION).toPath(), theme);
@@ -30,7 +34,7 @@ public class ThemeSwitcher {
 			String line = lines.get(i);
 			if (line.startsWith(Config.THEME_CONFIGURATION_FIND_PREFIX)) {
 				lines.set(i, newLine);
-				System.out.println("Theme switched in " + pathToThemeFile + " to " + theme);
+				LOGGER.info("Theme switched in " + pathToThemeFile + " to " + theme);
 				break;
 			}
 		}
