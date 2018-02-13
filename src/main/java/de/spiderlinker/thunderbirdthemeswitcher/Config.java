@@ -10,7 +10,8 @@ public final class Config {
     // config class
   }
 
-  public static final String URL_THEME_DOWNLOAD = "https://github.com/spymastermatt/thunderbird-monterail/archive/master.zip";
+  public static final String URL_THEME = "https://github.com/spymastermatt/thunderbird-monterail";
+  public static final String URL_THEME_DOWNLOAD = URL_THEME + "/archive/master.zip";
   public static final String THEME_FOLDER_NAME = "chrome";
 
   public static final String DIR_TB_PROFILES_WIN = System.getProperty("user.home")
