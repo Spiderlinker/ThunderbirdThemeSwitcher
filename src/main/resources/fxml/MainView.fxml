@@ -7,7 +7,6 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -85,9 +84,7 @@
                      <viewport>
                         <Rectangle2D />
                      </viewport>
-                     <image>
-                        <Image url="@../../../../Downloads/unzipped/chrome/screenshots/monterail.png" />
-                     </image>
+                     <image />
                   </ImageView>
                </children>
             </StackPane>

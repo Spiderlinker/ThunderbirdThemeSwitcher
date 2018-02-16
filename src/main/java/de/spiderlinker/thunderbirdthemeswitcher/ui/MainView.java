@@ -17,12 +17,10 @@ import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,12 +62,9 @@ public class MainView {
     loadFxmlFile();
     styleProgressBars();
 
-    setupComboBoxBinding();
-    setupProgressBarBindings();
-    setupImageBinding();
-    setupButtonBindings();
+    setupWidgetBindings();
 
-    updateThemeImages();
+    updateAvailableThemeImagesToDisplay();
   }
 
   private void loadFxmlFile() {
@@ -85,6 +80,13 @@ public class MainView {
   private void styleProgressBars() {
     progressInstall.getStyleClass().add("install-progress-bar");
     progressUninstall.getStyleClass().add("uninstall-progress-bar");
+  }
+
+  private void setupWidgetBindings() {
+    setupComboBoxBinding();
+    setupProgressBarBindings();
+    setupImageBinding();
+    setupButtonBindings();
   }
 
   private void setupComboBoxBinding() {
@@ -105,8 +107,8 @@ public class MainView {
   }
 
   private void setupButtonBindings() {
-    btnInstallTheme.disableProperty().bind(installing);
-    btnUninstallTheme.disableProperty().bind(uninstalling);
+    btnInstallTheme.disableProperty().bind(installing.or(uninstalling));
+    btnUninstallTheme.disableProperty().bind(uninstalling.or(installing));
   }
 
   private Image getImageOfSelectedTheme() {
@@ -122,7 +124,7 @@ public class MainView {
         LOGGER.info("Installing theme...");
         ThemeInstaller.installTheme();
         LOGGER.info("Theme installed!");
-        updateThemeImages();
+        updateAvailableThemeImagesToDisplay();
       } catch (IOException e1) {
         e1.printStackTrace();
       }
@@ -135,7 +137,7 @@ public class MainView {
     new Thread(() -> {
       uninstalling.setValue(true);
       ThemeUninstaller.uninstallTheme();
-      updateThemeImages();
+      updateAvailableThemeImagesToDisplay();
       uninstalling.setValue(false);
     }).start();
   }
@@ -176,7 +178,7 @@ public class MainView {
     return themesAndTheirImages.get(boxChooseTheme.getSelectionModel().getSelectedItem());
   }
 
-  private void updateThemeImages() {
+  private void updateAvailableThemeImagesToDisplay() {
     LOGGER.info("Updating available themes...");
     Platform.runLater(() ->
     {
