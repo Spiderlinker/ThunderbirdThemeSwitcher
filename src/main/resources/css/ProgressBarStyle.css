@@ -23,3 +23,12 @@
 .uninstall-progress-bar > .bar {
      -fx-background-color: #ce584a;
  }
+
+ .jfx-snackbar-content {
+    -fx-background-color: #2f65a5;
+ }
+
+ .jfx-snackbar-toast {
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+ }

@@ -3,6 +3,7 @@ package de.spiderlinker.thunderbirdthemeswitcher.ui;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXProgressBar;
+import com.jfoenix.controls.JFXSnackbar;
 import de.spiderlinker.thunderbirdthemeswitcher.Config;
 import de.spiderlinker.thunderbirdthemeswitcher.core.ThemeInstaller;
 import de.spiderlinker.thunderbirdthemeswitcher.core.ThemeSearcher;
@@ -51,6 +52,9 @@ public class MainView {
   @FXML
   private JFXComboBox<String> boxChooseTheme;
 
+  @FXML
+  private JFXSnackbar snackbarInfo;
+
   private BorderPane root;
 
   private ObservableMap<String, String> themesAndTheirImages = FXCollections.observableHashMap();
@@ -62,6 +66,7 @@ public class MainView {
     loadFxmlFile();
     styleProgressBars();
 
+    completeSnackbarWidget();
     setupWidgetBindings();
 
     updateAvailableThemeImagesToDisplay();
@@ -80,6 +85,10 @@ public class MainView {
   private void styleProgressBars() {
     progressInstall.getStyleClass().add("install-progress-bar");
     progressUninstall.getStyleClass().add("uninstall-progress-bar");
+  }
+
+  private void completeSnackbarWidget() {
+    snackbarInfo.registerSnackbarContainer(root);
   }
 
   private void setupWidgetBindings() {
@@ -123,7 +132,7 @@ public class MainView {
       try {
         LOGGER.info("Installing theme...");
         ThemeInstaller.installTheme();
-        LOGGER.info("Theme installed!");
+        showMessage("Theme successfully installed!");
         updateAvailableThemeImagesToDisplay();
       } catch (IOException e1) {
         e1.printStackTrace();
@@ -138,6 +147,7 @@ public class MainView {
       uninstalling.setValue(true);
       ThemeUninstaller.uninstallTheme();
       updateAvailableThemeImagesToDisplay();
+      showMessage("Theme successfully uninstalled!");
       uninstalling.setValue(false);
     }).start();
   }
@@ -151,6 +161,7 @@ public class MainView {
     }
 
     ThemeSwitcher.switchThemeTo(theme);
+    showMessage("Theme switched to " + theme);
   }
 
   @FXML
@@ -187,6 +198,11 @@ public class MainView {
       boxChooseTheme.requestFocus();
       LOGGER.info("Found available themes: {}");
     });
+  }
+
+  private void showMessage(String message) {
+    LOGGER.info(message);
+    Platform.runLater(() -> snackbarInfo.show(message, 2000));
   }
 
   public BorderPane getRoot() {
