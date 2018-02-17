@@ -2,7 +2,11 @@
 This application provides a nice User Interface to easily switch the theme of Thunderbird.
 It does the downloading, unzipping, moving and editing the theme configuration for you.
 
-Since I don't want to waste your time, let's get into it!
+### Themes
+The available themes in this application are not made by me. They were created by the guys of [Monterail](https://www.monterail.com/blog/2016/the-power-of-email-clients-why-did-we-redesign-thunderbird?utm_source=Thunderbird&utm_campaign=Dribbble&utm_medium=blogpost%22) at their project [Thunderbird monterail](https://github.com/spymastermatt/thunderbird-monterail).
+If you appreciate their work have a look at their website [https://www.monterail.com/](https://www.monterail.com/)!
+
+*Since I don't want to take your time anymore, let's get into it!*
 
 ## Getting Started
 Now let's see how to run this application to switch the theme of Thunderbird.
