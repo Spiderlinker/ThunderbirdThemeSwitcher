@@ -3,8 +3,8 @@ This application provides a nice User Interface to easily switch the theme of Th
 It does the downloading, unzipping, moving and editing the theme configuration for you.
 
 ### Themes
-The available themes in this application are not made by me. They were created by the guys of [Monterail](https://www.monterail.com/blog/2016/the-power-of-email-clients-why-did-we-redesign-thunderbird?utm_source=Thunderbird&utm_campaign=Dribbble&utm_medium=blogpost%22) at their project [Thunderbird monterail](https://github.com/spymastermatt/thunderbird-monterail).
-If you appreciate their work have a look at their website [https://www.monterail.com/](https://www.monterail.com/)!
+The available themes in this application are not made by me. They were created by the guys of [spymastermatt](https://github.com/spymastermatt/) at their project [Thunderbird-monterail](https://github.com/spymastermatt/thunderbird-monterail).
+If you appreciate their work have a look at their project!
 
 *Since I don't want to take your time anymore, let's get into it!*
 
