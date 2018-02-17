@@ -80,7 +80,7 @@
       <HBox spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <JFXSnackbar fx:id="snackbarInfo" style="-fx-background-color: red;" />
-            <Label maxHeight="1.7976931348623157E308" prefWidth="100.0" text="Please restart Thunderbird to view the changes!" textAlignment="CENTER" wrapText="true">
+            <Label maxHeight="1.7976931348623157E308" prefWidth="110.0" text="Please restart Thunderbird to view the new theme!" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
