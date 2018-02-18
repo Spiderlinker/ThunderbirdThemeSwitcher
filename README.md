@@ -2,7 +2,11 @@
 This application provides a nice User Interface to easily switch the theme of Thunderbird.
 It does the downloading, unzipping, moving and editing the theme configuration for you.
 
-Since I don't want to waste your time, let's get into it!
+### Themes
+The available themes in this application are not made by me. They were created by the guys of [spymastermatt](https://github.com/spymastermatt/) at their project [Thunderbird-monterail](https://github.com/spymastermatt/thunderbird-monterail).
+If you appreciate their work have a look at their project!
+
+*Since I don't want to take your time anymore, let's get into it!*
 
 ## Getting Started
 Now let's see how to run this application to switch the theme of Thunderbird.
@@ -10,7 +14,7 @@ Now let's see how to run this application to switch the theme of Thunderbird.
 ### Prerequisites
 To run the application you need two things:
 * [The latest Java Runtime Environment (JRE)](https://java.com/en/download/)
-* [And the application itself](/application/ThunderbirdThemeSwitcher.jar)
+* [And the application itself](/application/ThunderbirdThemeSwitcher.jar?raw=false)
 
 ### Installing
 First install the JRE properly (watch out for the Yahoo Search) by following the steps of the Installer.
