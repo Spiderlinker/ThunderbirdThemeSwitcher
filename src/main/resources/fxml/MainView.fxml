@@ -85,7 +85,7 @@
                   <Insets left="20.0" />
                </HBox.margin>
             </Label>
-            <JFXButton fx:id="btnSwitchTheme" buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#onSwitchTheme" ripplerFill="#2f65a5" style="-fx-background-color: rgba(47, 101, 165, 0.1);" text="Switch Theme" HBox.hgrow="ALWAYS">
+            <JFXButton fx:id="btnSwitchTheme" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onSwitchTheme" ripplerFill="#2f65a5" style="-fx-background-color: rgba(47, 101, 165, 0.1);" text="Switch Theme" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </padding>
