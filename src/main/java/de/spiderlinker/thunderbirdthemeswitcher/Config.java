@@ -14,10 +14,10 @@ public final class Config {
   public static final String URL_THEME_DOWNLOAD = URL_THEME + "/archive/master.zip";
   public static final String THEME_FOLDER_NAME = "chrome";
 
-  public static final String DIR_TB_PROFILES_WIN = System.getProperty("user.home")
-      + "\\Appdata\\Roaming\\Thunderbird\\Profiles\\";
-  public static final String DIR_TB_PROFILES_UNIX = "~/.thunderbird/";
-  public static final String DIR_TB_PROFILES_MAC = "~/Library/Thunderbird/Profiles/";
+  public static final String USER_HOME = System.getProperty("user.home");
+  public static final String DIR_TB_PROFILES_WIN = USER_HOME + "\\Appdata\\Roaming\\Thunderbird\\Profiles\\";
+  public static final String DIR_TB_PROFILES_UNIX = USER_HOME + "/.thunderbird/";
+  public static final String DIR_TB_PROFILES_MAC = USER_HOME + "/Library/Thunderbird/Profiles/";
 
   public static final String DIR_PROFILES = getTBProfilePathDependingOnOS();
 
