@@ -8,7 +8,7 @@ public final class Config {
     // config class
   }
 
-  private static String OS = System.getProperty("os.name").toLowerCase();
+  private static final String OS = System.getProperty("os.name").toLowerCase();
 
   public static final String URL_THEME = "https://github.com/spymastermatt/thunderbird-monterail";
   public static final String URL_THEME_DOWNLOAD = URL_THEME + "/archive/master.zip";
