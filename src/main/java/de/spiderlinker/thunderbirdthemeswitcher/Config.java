@@ -1,7 +1,5 @@
 package de.spiderlinker.thunderbirdthemeswitcher;
 
-import com.sun.javafx.PlatformUtil;
-
 import java.io.File;
 
 public final class Config {
@@ -9,6 +7,8 @@ public final class Config {
   private Config() {
     // config class
   }
+
+  private static String OS = System.getProperty("os.name").toLowerCase();
 
   public static final String URL_THEME = "https://github.com/spymastermatt/thunderbird-monterail";
   public static final String URL_THEME_DOWNLOAD = URL_THEME + "/archive/master.zip";
@@ -36,11 +36,18 @@ public final class Config {
   public static final String THEME_CONFIGURATION_FIND_SUFFIX = ".css\";";
 
   public static String getTBProfilePathDependingOnOS() {
-    return PlatformUtil.isWindows() ? DIR_TB_PROFILES_WIN //
-        : PlatformUtil.isUnix() ? DIR_TB_PROFILES_UNIX //
-        : PlatformUtil.isMac() ? DIR_TB_PROFILES_MAC //
-        : "";
+    return isWindows() ? DIR_TB_PROFILES_WIN //
+        : isMac() ? DIR_TB_PROFILES_MAC //
+        : DIR_TB_PROFILES_UNIX; //
 
+  }
+
+  public static boolean isWindows() {
+    return OS.contains("win");
+  }
+
+  public static boolean isMac() {
+    return OS.contains("mac");
   }
 
 }
