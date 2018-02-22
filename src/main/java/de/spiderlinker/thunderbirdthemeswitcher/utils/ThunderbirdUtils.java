@@ -1,11 +1,11 @@
 package de.spiderlinker.thunderbirdthemeswitcher.utils;
 
 import de.spiderlinker.thunderbirdthemeswitcher.Config;
-import de.spiderlinker.thunderbirdthemeswitcher.ThunderbirdThemeSwitcher;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 public class ThunderbirdUtils {
 
@@ -19,9 +19,7 @@ public class ThunderbirdUtils {
     Collection<File> collectedProfileFolders = new ArrayList<>();
     File[] profileFolders = getFilesInProfilesFolderMatchingSuffix();
     if (profileFolders != null) {
-      for (File profileFolder : profileFolders) {
-        collectedProfileFolders.add(profileFolder);
-      }
+      Collections.addAll(collectedProfileFolders, profileFolders);
     }
     return collectedProfileFolders;
   }
