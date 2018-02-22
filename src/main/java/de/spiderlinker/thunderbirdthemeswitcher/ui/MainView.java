@@ -134,8 +134,8 @@ public class MainView {
         ThemeInstaller.installTheme();
         showMessage("Theme successfully installed!");
         updateAvailableThemeImagesToDisplay();
-      } catch (IOException e1) {
-        e1.printStackTrace();
+      } catch (IOException exc) {
+        LOGGER.error("Could not install themes!", exc);
       }
       installing.setValue(false);
     }).start();
@@ -170,18 +170,18 @@ public class MainView {
     if (selectedImage != null) {
       try {
         Desktop.getDesktop().open(new File(selectedImage));
-      } catch (IOException e1) {
-        e1.printStackTrace();
+      } catch (IOException exc) {
+        LOGGER.error("Could not open image in os viewer!", exc);
       }
     }
   }
 
   @FXML
-  private void onVisitThemeSite(ActionEvent event) {
+  private void onVisitThemeSite(ActionEvent e) {
     try {
       Desktop.getDesktop().browse(new URI(Config.URL_THEME));
-    } catch (IOException | URISyntaxException e) {
-      e.printStackTrace();
+    } catch (IOException | URISyntaxException exc) {
+      LOGGER.error("Could not open URL: " + Config.URL_THEME, exc);
     }
   }
 

@@ -21,7 +21,7 @@ public class ThemeSwitcher {
 			try {
 				switchThemeInFileTo(new File(profileFolder, Config.FILE_THEME_CONFIGURATION).toPath(), theme);
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.error("Could not switch theme!", e);
 			}
 		});
 	}
