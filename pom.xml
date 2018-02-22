@@ -9,6 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.exclusions>test, **/*Test.java</sonar.exclusions>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
