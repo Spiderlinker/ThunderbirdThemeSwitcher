@@ -78,7 +78,7 @@ public class MainView {
     try {
       root = loader.load();
     } catch (IOException e) {
-      e.printStackTrace();
+      LOGGER.error("Could not load fxml!", e);
     }
   }
 

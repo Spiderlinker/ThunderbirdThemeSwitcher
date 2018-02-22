@@ -1,6 +1,7 @@
 package de.spiderlinker.thunderbirdthemeswitcher.utils;
 
 import de.spiderlinker.thunderbirdthemeswitcher.Config;
+import de.spiderlinker.thunderbirdthemeswitcher.ThunderbirdThemeSwitcher;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,7 +9,11 @@ import java.util.Collection;
 
 public class ThunderbirdUtils {
 
-  private static String PROFILE_SUFFIX = ".default";
+  private static final String PROFILE_SUFFIX = ".default";
+
+  private ThunderbirdUtils() {
+    // Utility class
+  }
 
   public static Collection<File> getProfileFolders() {
     Collection<File> collectedProfileFolders = new ArrayList<>();

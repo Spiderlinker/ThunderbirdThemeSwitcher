@@ -5,8 +5,12 @@ import de.spiderlinker.thunderbirdthemeswitcher.utils.ThunderbirdUtils;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ThunderbirdThemeSwitcher extends Application {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(ThunderbirdThemeSwitcher.class);
 
   private Stage stage;
   private Scene scene;
@@ -17,7 +21,7 @@ public class ThunderbirdThemeSwitcher extends Application {
 
   @Override
   public void start(Stage primaryStage) {
-    System.out.println(ThunderbirdUtils.getProfileFolders());
+    LOGGER.info("Found profiles on startup: {}", ThunderbirdUtils.getProfileFolders());
     this.stage = primaryStage;
 
     createSceneForStage();

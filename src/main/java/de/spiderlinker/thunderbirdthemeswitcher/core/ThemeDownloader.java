@@ -8,6 +8,10 @@ import java.nio.channels.ReadableByteChannel;
 
 public class ThemeDownloader {
 
+	private ThemeDownloader() {
+		// utility class
+	}
+
 	public static void downloadTheme(String zipFileUrl, String destinationFile) throws IOException {
 		URL url = new URL(zipFileUrl);
 		try (ReadableByteChannel inputChannel = Channels.newChannel(url.openStream());

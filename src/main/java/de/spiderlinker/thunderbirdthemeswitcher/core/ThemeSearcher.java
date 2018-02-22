@@ -19,6 +19,10 @@ public class ThemeSearcher {
 
   private static final String THEME_FILE_REGEX = "[a-zA-Z0-9]+\\.css";
 
+  private ThemeSearcher() {
+    // Utility class
+  }
+
   public static Map<String, String> getThemesAndImages() {
     Map<String, String> themesAndImages = new HashMap<>();
 

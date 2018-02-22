@@ -14,7 +14,11 @@ import java.util.List;
 public class ThemeSwitcher {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(ThemeSwitcher.class);
-	
+
+  private ThemeSwitcher() {
+    // Utility class
+  }
+
 	public static void switchThemeTo(String theme) {
 		LOGGER.info("Switching theme to " + theme);
 		ThunderbirdUtils.getProfileFolders().forEach(profileFolder -> {

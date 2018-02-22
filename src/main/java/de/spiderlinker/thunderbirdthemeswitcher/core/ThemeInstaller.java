@@ -14,6 +14,10 @@ public class ThemeInstaller {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ThemeInstaller.class);
 
+  private ThemeInstaller() {
+    // Utility class
+  }
+
   public static void installTheme() throws IOException {
     checkFolderStructure();
     downloadTheme();

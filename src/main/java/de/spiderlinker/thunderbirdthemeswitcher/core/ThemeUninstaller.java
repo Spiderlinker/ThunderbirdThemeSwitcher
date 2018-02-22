@@ -12,6 +12,10 @@ public class ThemeUninstaller {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ThemeUninstaller.class);
 
+  private ThemeUninstaller() {
+    // Utility class
+  }
+
   public static void uninstallTheme() {
     LOGGER.info("Uninstalling theme...");
     deleteDirectory(new File(Config.DIR_TEMP));

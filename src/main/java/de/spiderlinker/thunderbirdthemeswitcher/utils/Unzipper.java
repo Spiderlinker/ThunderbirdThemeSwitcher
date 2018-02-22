@@ -8,6 +8,10 @@ public class Unzipper {
 
   private static final int BUFFER_SIZE = 4096;
 
+  private Unzipper() {
+    // Utility class
+  }
+
   public static void unzip(String zipFilePath, String destDirectory) throws IOException {
     createDirectory(destDirectory);
 
