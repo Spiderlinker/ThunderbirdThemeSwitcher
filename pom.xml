@@ -69,6 +69,11 @@
             <version>2.4</version>
         </dependency>
         <dependency>
+            <groupId>org.ini4j</groupId>
+            <artifactId>ini4j</artifactId>
+            <version>0.5.4</version>
+        </dependency>
+        <dependency>
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
             <version>8.0.2</version>
@@ -78,6 +83,16 @@
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.powermock</groupId>-->
+            <!--<artifactId>powermock-core</artifactId>-->
+            <!--<version>1.7.3</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.easymock</groupId>-->
+            <!--<artifactId>easymock</artifactId>-->
+            <!--<version>3.5.1</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>
