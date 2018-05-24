@@ -48,7 +48,7 @@ public class MainView {
   private JFXProgressBar progressUninstall;
 
   @FXML
-  private ImageView imgPreview;
+  private ImageView           imgPreview;
   @FXML
   private JFXComboBox<String> boxChooseTheme;
 
@@ -59,7 +59,7 @@ public class MainView {
 
   private ObservableMap<String, String> themesAndTheirImages = FXCollections.observableHashMap();
 
-  private BooleanProperty installing = new SimpleBooleanProperty(false);
+  private BooleanProperty installing   = new SimpleBooleanProperty(false);
   private BooleanProperty uninstalling = new SimpleBooleanProperty(false);
 
   public MainView() {
@@ -99,8 +99,16 @@ public class MainView {
   }
 
   private void setupComboBoxBinding() {
-    boxChooseTheme.promptTextProperty().bind(Bindings.when(Bindings.isEmpty(themesAndTheirImages)).then("No Themes installed!").otherwise("Select a theme..."));
-    boxChooseTheme.itemsProperty().bind(Bindings.createObjectBinding(() -> FXCollections.observableArrayList(themesAndTheirImages.keySet()), themesAndTheirImages));
+    boxChooseTheme
+        .promptTextProperty()
+        .bind(Bindings.when(
+            Bindings.isEmpty(themesAndTheirImages))
+            .then("No Themes installed!")
+            .otherwise("Select a theme..."));
+    boxChooseTheme
+        .itemsProperty()
+        .bind(Bindings.createObjectBinding(
+            () -> FXCollections.observableArrayList(themesAndTheirImages.keySet()), themesAndTheirImages));
   }
 
   private void setupProgressBarBindings() {
@@ -196,7 +204,7 @@ public class MainView {
       themesAndTheirImages.clear();
       themesAndTheirImages.putAll(ThemeSearcher.getThemesAndImages());
       boxChooseTheme.requestFocus();
-      LOGGER.info("Found available themes: {}");
+      LOGGER.info("Found available themes: {}", themesAndTheirImages.keySet());
     });
   }
 

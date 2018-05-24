@@ -32,8 +32,8 @@ public class ThunderbirdUtils {
     Collection<File> profileFolders = new ArrayList<>();
 
     try {
-      Ini profilesIni = new Ini(Config.getTBProfilesIniFileDependingOnOS());
-      profileFolders.addAll(getAllProfileFolders(profilesIni));
+      Ini iniContainingProfiles = new Ini(Config.getTBProfilesIniFileDependingOnOS());
+      profileFolders.addAll(getAllProfileFolders(iniContainingProfiles));
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -41,12 +41,12 @@ public class ThunderbirdUtils {
     return profileFolders;
   }
 
-  private static Collection<File> getAllProfileFolders(Ini profilesIni) {
+  private static Collection<File> getAllProfileFolders(Ini iniContainingProfiles) {
     Collection<File> profileFolders = new ArrayList<>();
 
     int index = 0;
     Profile.Section profileSection;
-    while ((profileSection = getProfileWithIndex(profilesIni, index++)) != null) {
+    while ((profileSection = getProfileWithIndex(iniContainingProfiles, index++)) != null) {
       File profileFolder = getProfileFolder(profileSection);
 
       if (profileFolder.exists()) {

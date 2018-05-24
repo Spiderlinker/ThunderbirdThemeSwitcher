@@ -61,6 +61,7 @@ public class ThemeInstaller {
     File destinationFile = new File(profileFolder, Config.THEME_FOLDER_NAME);
 
     try {
+      LOGGER.info("Copying Theme to " + destinationFile);
       FileUtils.copyDirectory(unzippedTheme, destinationFile);
     } catch (IOException e) {
       LOGGER.error("Could not copy unzipped theme to profile folder: " + profileFolder, e);
