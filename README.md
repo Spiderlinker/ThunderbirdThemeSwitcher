@@ -14,7 +14,7 @@ Now let's see how to run this application to switch the theme of Thunderbird.
 ### Prerequisites
 To run the application you need two things:
 * [The latest Java Runtime Environment (JRE)](https://java.com/en/download/)
-* [And the application itself](/application/ThunderbirdThemeSwitcher.jar?raw=false)
+* [And the application itself](https://github.com/Spiderlinker/ThunderbirdThemeSwitcher/releases/download/1.0/ThunderbirdThemeSwitcher.jar)
 
 ### Installing
 First install the JRE properly (watch out for the Yahoo Search) by following the steps of the Installer.
