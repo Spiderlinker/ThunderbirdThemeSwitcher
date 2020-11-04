@@ -77,11 +77,11 @@
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
             <version>8.0.2</version>
-        </dependency>
+        </dependency>     
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <version>[4.13.1,)</version>
         </dependency>
         <!--<dependency>-->
             <!--<groupId>org.powermock</groupId>-->
