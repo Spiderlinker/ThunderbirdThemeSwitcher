@@ -18,7 +18,7 @@ public class ThunderbirdUtilsTest {
     Collection<File> profileFolders = ThunderbirdUtils.getProfileFolders();
     for (File profileFolder : profileFolders) {
       System.out.println(profileFolder.getAbsolutePath());
-      Assert.assertTrue(profileFolder.getAbsolutePath().endsWith(".default"));
+      Assert.assertTrue(profileFolder.getAbsolutePath().endsWith(".default") || profileFolder.getAbsolutePath().endsWith(".default-release"));
     }
   }
 
